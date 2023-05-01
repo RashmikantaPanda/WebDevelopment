@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+   <title>Hotel Webpage</title>
+   <style>
+      * {
+         margin: 0;
+         padding: 0;
+      }
+
+      .navbar {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         position: sticky;
+         top: 0;
+         cursor: pointer;
+      }
+
+      .background {
+         background: rgb(115, 151, 228);
+         background-blend-mode: darken;
+         background-size: cover;
+      }
+
+      .nav-list {
+         width: 70%;
+         display: flex;
+         align-items: center;
+      }
+
+      .logo {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+
+      .logo img {
+         width: 70px;
+         border-radius: 50px;
+      }
+
+      .nav-list li {
+         list-style: none;
+         padding: 26px 30px;
+      }
+
+      .nav-list li a {
+         text-decoration: none;
+         color: white;
+      }
+
+      .nav-list li a:hover {
+         color: grey;
+      }
+
+      .rightnav {
+         width: 30%;
+         text-align: right;
+      }
+
+      #search {
+         padding: 5px;
+         font-size: 17px;
+         border: 2px solid grey;
+         border-radius: 9px;
+      }
+
+      .firstsection {
+         background-color: rgb(131, 155, 176);
+         height: 00px;
+         margin-top: 300px;
+         width: 100%;
+         /* height: 100%; */
+      }
+
+      .secondsection {
+         background-color: blue;
+         height: 400px;
+      }
+
+      .box-main {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         color: rgb(128, 153, 89);
+         max-width: 80%;
+         margin: auto;
+         height: 80%;
+      }
+
+      .firsthalf {
+         width: 100%;
+         height: 50%;
+         display: contents;
+         flex-direction: column;
+         justify-content: center;
+      }
+
+      .secondhalf {
+         width: 30%;
+      }
+
+
+
+      .btn {
+         padding: 8px 20px;
+         margin: 7px 0;
+         border: 2px solid white;
+         border-radius: 8px;
+         background: none;
+         color: white;
+         cursor: pointer;
+      }
+
+      .btn-sm {
+         padding: 6px 10px;
+         vertical-align: middle;
+      }
+
+
+      .section-Left {
+         flex-direction: row-reverse;
+      }
+
+
+      .center {
+         text-align: center;
+      }
+
+      .mapClass {
+         margin-top: 750px;
+         padding-left: 550px;
+      }
+      .hotelName{
+         margin-top: 2px;
+            padding: 20px;
+            color: #da865d;
+      }
+
+      .text-footer {
+         text-align: center;
+         margin-top: 50%;
+         padding: 10px 0 2 2;
+         font-family: 'Ubuntu', sans-serif;
+         display: flex;
+         justify-content: center;
+         color: white;
+      }
+   </style>
+</head>
+
+<body>
+   <nav class="navbar background">
+      <ul class="nav-list">
+         <div class="logo">
+            <img src="CSS/lofoMayfair.png">
+         </div>
+         <li><a href="HotelHome.html">Home</a></li>
+         <li><a href="menu.html">Menu</a></li>
+         <li><a href="about.html">About</a></li>
+         <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <div class="rightNav">
+         <input type="text" name="search" id="search">
+         <button class="btn btn-sm">Search</button>
+      </div>
+   </nav>
+
+   <section class="firstsection">
+      <div class="box-main">
+         <div class="firstHalf">
+            <img src="CSS/flower1.webp" alt="hotelImg">
+
+
+
+         </div>
+      </div>
+   </section>
+   <div class="hotelName">
+      <h1>Hotel Mayfair</h1>
+   </div>
+   </section> 
+
+
+
+   <div class="thumbnail">
+      <!-- <img src= "CSS/hotel-bed.jpg" alt="laptop image"> -->
+   </div>
+   </section>
+   <div class="mapClass">
+      <iframe
+         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3741.9849131211413!2d85.8196901!3d20.3008916!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1909c66e104471%3A0x1b99a6f59a58679c!2sMAYFAIR%20Lagoon!5e0!3m2!1sen!2sin!4v1663784998649!5m2!1sen!2sin"
+         width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+      </iframe>
+   </div>
+
+   <footer class="background">
+      <p class="text-footer">
+         Copyright ©-All rights are reserved
+      </p>
+
+
+   </footer>
+</body>
+
+</html>
