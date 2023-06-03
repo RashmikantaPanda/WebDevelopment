@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data</title>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+
+    
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+</head>
+<style>
+    
+    .user-details{
+        margin-top:52px;
+    }
+    .nav-color{
+         background: linear-gradient(0deg, #707d9a, 30%, #1176ac 70%);
+    }
+</style>
+
+<body>
+
+    <div class="">
+        <nav class="navbar navbar-light bg-light nav-color">
+            <a href="/admin" class="navbar-brand text-warning"><h4 style="margin-left: 50px;">Parking Management System</h4> </a>
+            <form class="form-inline mx-4">
+              <input class="form-control mr-sm-2" id="system-search" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success bg-light my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </nav>
+    </div>
+
+    <div class="user-details col-12 ">
+        <div class="mx-auto ">
+            <div class="container">
+                <div class="row">
+                    <!-- <div class="col-md-3">
+                        <form action="#" method="get">
+                            <div class="input-group">
+                                
+                                <input class="form-control" id="system-search" name="q" placeholder="Search for"
+                                    required>
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-default"><i
+                                            class="glyphicon glyphicon-search"></i></button>
+                                </span>
+                            </div>
+                        </form>
+                    </div> -->
+                    <div class="col-md-10 col-lg-10 mx-auto">
+                        <table class="table table-list-search table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#Sl No</th>
+                                    <th>Name</th>
+                                    <th>Email Id</th>
+                                    <th>Mobile No</th>
+                                    <th>Vehicle Type</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% if(data.length){ for(var i=0; i< data.length; i++) {%>
+                                    <tr>
+                                        <th scope="row">
+                                            <%= i+1 %>
+                                        </th>
+                                        <td>
+                                            <%= data[i].fullName%>
+                                        </td>
+                                        <td>
+                                            <%= data[i].email%>
+                                        </td>
+                                        <td>
+                                            <%= data[i].phone%>
+                                        </td>
+                                        <td>
+                                            <%=data[i].vehicle%>
+                                        </td>
+
+                                    </tr>
+                                    <% } }else{ %>
+                                        <tr>
+                                            <td>No data ever existed.</td>
+                                        </tr>
+                                        <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    $(document).ready(function () {
+        var activeSystemClass = $('.list-group-item.active');
+
+        //something is entered in search form
+        $('#system-search').keyup(function () {
+            var that = this;
+            // affect all table rows on in systems table
+            var tableBody = $('.table-list-search tbody');
+            var tableRowsClass = $('.table-list-search tbody tr');
+            $('.search-sf').remove();
+            tableRowsClass.each(function (i, val) {
+
+                //Lower text for case insensitive
+                var rowText = $(val).text().toLowerCase();
+                var inputText = $(that).val().toLowerCase();
+                if (inputText != '') {
+                    $('.search-query-sf').remove();
+                    tableBody.prepend('<tr class="search-query-sf"><td colspan="6"><strong>Searching for: "'
+                        + $(that).val()
+                        + '"</strong></td></tr>');
+                }
+                else {
+                    $('.search-query-sf').remove();
+                }
+
+                if (rowText.indexOf(inputText) == -1) {
+                    //hide rows
+                    tableRowsClass.eq(i).hide();
+
+                }
+                else {
+                    $('.search-sf').remove();
+                    tableRowsClass.eq(i).show();
+                }
+            });
+            //all tr elements are hidden
+            if (tableRowsClass.children(':visible').length == 0) {
+                tableBody.append('<tr class="search-sf"><td class="text-muted" colspan="6">No entries found.</td></tr>');
+            }
+        });
+    });
+</script>
+
+</html>
