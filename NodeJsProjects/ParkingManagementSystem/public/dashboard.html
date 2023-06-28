@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITAN navbar</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon"
+        href="https://hindubabynames.info/downloads/wp-content/themes/hbn_download/download/clothing-and-accessories-companies/titan-logo.png">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        nav {
+            background-color: wheat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0px;
+        }
+
+        .search {
+            background-color: lightgrey;
+            padding: 10px;
+            width: 500px;
+            margin: flex;
+            justify-content: space-between;
+            color: brown;
+            border-radius: 5px;
+
+        }
+
+        .search input {
+            width: 360px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+
+        }
+
+        .loginbtn {
+            padding: 8px 40px;
+            font-size: 15px;
+            font-weight: 600;
+            border: none;
+            outline: none;
+            color: black;
+        }
+
+        .Navlink {
+            margin: 0px 20px;
+            font-size: 18px;
+            color: brown;
+            text-decoration: none;
+
+        }
+
+        .col-2 img {
+            width: 100%;
+            height: auto;
+        }
+
+        .roww {
+            display: flex;
+        }
+
+        .col-3 {
+            flex: 33.33%;
+            padding: 5px;
+        }
+
+        .caro {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* provides background color to body */
+        .caro body {
+            background-color: black;
+
+        }
+
+        /* ----- container stylings: 
+        -> centers the whole content of the page
+        -> defines width and height for container ----- */
+        .caro .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            width: 80%;
+            height: 40%;
+        }
+
+        /* ----- end of container stylings ----- */
+
+        /* provides padding to main heading */
+        .main-heading {
+            padding: 2rem 0 2rem 0;
+        }
+
+        .content {
+            position: relative;
+        }
+
+        /* ----- carousel content stylings ----- */
+        /* places the carousel content on center of the carousel */
+        .carousel-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 50;
+        }
+
+        .carousel-heading {
+            font-size: 3rem;
+            color: #308d46;
+            margin-bottom: 1rem;
+        }
+
+        /*----- end of carousel content stylings ----- */
+
+        /* ----- slideshow stylings ----- */
+        .slideshow {
+            height: auto;
+            overflow: hidden;
+            /* to hide slides in x-direction */
+            position: relative;
+        }
+
+        /* wrapper which wraps all the slideshow images stylings */
+        .slideshow-wrapper {
+            display: flex;
+            /* We give it width as 400% because we are making a 
+               4 image carousel. If you want to make for example, 
+               5 images carousel, then give width as 500%. */
+            width: 400%;
+            height: 100%;
+            position: relative;
+            /* you can change the animation settings from below */
+            animation: slideshow 20s infinite;
+        }
+
+        /* define width and height for images*/
+        .slide {
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* @keyframes are used to provide animations
+           We make these settings for 4 image carousel.
+           Make modification according to your needs. */
+        @keyframes slideshow {
+            0% {
+                left: 0;
+            }
+
+            10% {
+                left: 0;
+            }
+
+            15% {
+                left: -100%;
+            }
+
+            25% {
+                left: -100%;
+            }
+
+            30% {
+                left: -200%;
+            }
+
+            40% {
+                left: -200%;
+            }
+
+            45% {
+                left: -300%;
+            }
+
+            55% {
+                left: -300%;
+            }
+
+            60% {
+                left: -200%;
+            }
+
+            70% {
+                left: -200%;
+            }
+
+            75% {
+                left: -100%;
+            }
+
+            85% {
+                left: -100%;
+            }
+
+            90% {
+                left: 0%;
+            }
+        }
+
+        /* ----- end of slideshow stylings ----- */
+
+        /* ----- carousel control buttons stylings ----- */
+        .slide-btn {
+            background-color: #bbb;
+            border-radius: 50%;
+            border: .2rem solid #d38800;
+            width: 1.2rem;
+            height: 1.2rem;
+            outline: none;
+            cursor: pointer;
+            /* stylings for positioning the buttons at
+               the bottom of the carousel */
+            position: absolute;
+            bottom: 3%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 70;
+        }
+
+        /* As we provide position as absolute, 
+        the buttons places one over the other. 
+        So, we have to place them individually
+        at their correct positions. */
+        .slide-btn-1 {
+            left: 45%;
+        }
+
+        .slide-btn-2 {
+            left: 50%;
+        }
+
+        .slide-btn-3 {
+            left: 55%;
+        }
+
+        .slide-btn-4 {
+            left: 60%;
+        }
+
+        /* When we focus on the particular button, 
+        the animation stops to that particular image 
+        to which the button is associated. */
+        .slide-btn-1:focus~.slideshow-wrapper {
+            animation: none;
+            left: 0;
+        }
+
+        .slide-btn-2:focus~.slideshow-wrapper {
+            animation: none;
+            left: -100%;
+        }
+
+        .slide-btn-3:focus~.slideshow-wrapper {
+            animation: none;
+            left: -200%;
+        }
+
+        .slide-btn-4:focus~.slideshow-wrapper {
+            animation: none;
+            left: -300%;
+        }
+
+        /* when we focus on the button, the background color changes */
+        .slide-btn:focus {
+            background-color: black;
+        }
+
+        .col-4 {
+            flex: 33.33%;
+            padding: 5px;
+            background-color: wheat;
+        }
+
+        .col-5 {
+            flex: 33.33%;
+            padding: 5px;
+            background-color: wheat;
+        }
+
+        .title {
+            text-align: center;
+            margin: 0 auto 80px;
+            position: relative;
+            line-height: 60px;
+            color: brown
+        }
+
+        .title::after {
+            content: '';
+            background: #ff523b;
+            width: 80px;
+            height: 5px;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        h4 {
+            color: #555;
+            font-weight: normal;
+        }
+
+        .col-4 p {
+            font-size: 15px;
+        }
+
+        .rating .fa {
+            color: #ff523b;
+        }
+
+        .col-4:hover {
+            transform: translateY(-5px);
+            background-color: #ff523b;
+
+        }
+
+        .col-5 p {
+            font-size: 15px;
+        }
+
+        .col-5:hover {
+            transform: translateY(-5px);
+            background-color: #ff523b;
+        }
+
+        .footer {
+            background: #000;
+            color: #8a8a8a;
+            font-size: 14px;
+            padding: 60px 0 20px;
+        }
+
+        .footer p {
+            color: #8a8a8a;
+
+        }
+
+        .footer h3 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .footer-col-1,
+        .footer-col-2,
+        .footer-col-3,
+        .footer-col-4 {
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col-1 {
+            flex-basis: 30%;
+        }
+
+        .footer-col-2 {
+            flex: 1;
+            text-align: center;
+        }
+
+        .footer-col-2 img {
+            width: 180px;
+            margin-bottom: 20px;
+        }
+
+        .app-logo {
+            margin-top: 20px;
+        }
+
+        .app-logo img {
+            width: 140px;
+        }
+
+        .footer hr {
+            border: none;
+            background: #b5b5b5;
+            height: 1px;
+            margin: 20px 0;
+        }
+
+        .copyright {
+            text-align: center;
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-left: 30px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: #42c892;
+        }
+
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .navbar a:hover,
+        .dropdown:hover .dropbtn,
+        .dropbtn:focus {
+            background-color: lightgray;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .navbar input[type=text] {
+            float: center;
+            padding: 6px;
+            border: none;
+            margin-top: 8px;
+            margin-right: 16px;
+            font-size: 17px;
+        }
+
+        /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+        @media screen and (max-width: 600px) {
+            .navbar input[type=text] {
+                float: none;
+                display: block;
+                text-align: left;
+                width: 100%;
+                margin: 0;
+                padding: 14px;
+            }
+
+            .navbar input[type=text] {
+                border: 1px solid #ccc;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="navbar">
+        <a href="#home">HOME</a>
+        <a href="/cart">CART</a>
+        <a href="/login">LOGIN</a>
+        <!-- <div class="dropdown">
+            <button class="dropbtn" onclick="myFunction()">More
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+                <a href="/login">LOGIN</a>
+                <a href="#">My Orders</a>
+                <a href="#">Track Order</a>
+                <a href="#">Coupons</a>
+                <a href="#">Wishlist</a>
+                <a href="#">Offers</a>
+            </div>
+        </div> -->
+        <div>
+            <input type="text" placeholder="search..">
+        </div>
+
+    </div>
+
+
+
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (e) {
+            if (!e.target.matches('.dropbtn')) {
+                var myDropdown = document.getElementById("myDropdown");
+                if (myDropdown.classList.contains('show')) {
+                    myDropdown.classList.remove('show');
+                }
+            }
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+    <!-- <nav>
+    <div class="logo">
+    <img src="https://vectorseek.com/wp-content/uploads/2021/02/Titan-Logo-Vector-scaled.jpg" width="95px" height="40px">
+    </div>
+    <div class="search">
+        <input type="text" placeholder="search for products">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    <div class="dropdown">
+    <button class="dropbtn">Dropdown</button>
+    <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+</div> 
+
+    <a href="#" class="Navlink">Become a seller</a>
+    <a href="#"class="Navlink">
+          More
+        <i class="fa-solid fa-angle-down"></i> -->
+    <!-- </a>
+    <a href="#"class="Navlink">
+        Cart
+        <i class="fa-solid fa-cart-shopping"></i>
+    </a>
+
+
+ </nav> -->
+
+    <div class="row">
+
+        <div class="col-2">
+            <img src="https://staticimg.titan.co.in/Titan/Banners/PLP/TT_Smartsale_140523_espot.jpg">
+        </div>
+    </div>
+    </div>
+    </div>
+    <!-- <div class="categories">
+<div class="small-container">
+    <div class="roww">
+    <div class="col-3">
+        <img src="https://staticimg.titan.co.in/Titan/Catalog/1805NM01_1.jpg"width="300" height="300"
+    ></div>
+    <div class="col-3">
+        <img src="https://assets.myntassets.com/fl_progressive/h_960,q_80,w_720/v1/assets/images/757913/2022/8/2/cf57f9d5-150c-4011-a45f-d029014db3331659441751589-Titan-Men-White-Dial-Watch-9162YL01-5551659441751297-1.jpg" width="300" height="300"
+      >
+    </div>
+    <div class="col-3">
+        <img src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/757863/2023/2/23/9182be59-04df-49b2-a60e-eecbfeddba311677143283050TitanMenGold-TonedDialWatchNF1578YM051.jpg "width="300" height="300"
+      >
+    </div>
+</div> 
+    </div>
+ </div> -->
+
+    <div class="caro">
+        <div class="container">
+            <h1 class="main-heading">Welcome To Titan</h1>
+            <div class="content">
+                <!-- The content which is placed at the center of the carousel -->
+                <!-- <div class="carousel-content">
+             <h1 class="carousel-heading">
+                GeeksforGeeks
+            </h1>
+            <h3>A computer science portal for geeks</h3> -->
+                <!-- </div> -->
+                <div class="slideshow">
+                    <!-- carousel control buttons -->
+                    <button class="slide-btn slide-btn-1"></button>
+                    <button class="slide-btn slide-btn-2"></button>
+                    <button class="slide-btn slide-btn-3"></button>
+                    <button class="slide-btn slide-btn-4"></button>
+                    <!-- carousel wrapper which contains all images -->
+                    <div class="slideshow-wrapper">
+                        <div class="slide">
+                            <img class="slide-img"
+                                src="https://img.freepik.com/free-vector/dark-style-realistic-smart-watch-horizontal-banner-with-advertising-site-vector-illustration_1284-30193.jpg">
+                        </div>
+                        <div class="slide">
+                            <img class="slide-img"
+                                src="https://img.freepik.com/free-psd/special-offer-black-friday-web-banner-template_120329-1093.jpg">
+                        </div>
+                        <div class="slide">
+                            <img class="slide-img"
+                                src="https://www.soyacincau.com/wp-content/uploads/2020/03/200318-tag-heuer-connected-3.jpg">
+                        </div>
+                        <div class="slide">
+                            <img class="slide-img"
+                                src="https://www.garmin.co.in/m/in/g/products/promote/find_your_watch_600_v2_en.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="small-container">
+        <h2 class="title">products</h2>
+        <div class="roww">
+            <div class="col-4">
+                <img src="https://staticimg.titan.co.in/Titan/Catalog/90165AP01_1.jpg?impolicy=pqmed&imwidth=640"
+                    width="280" height="280">
+                <h4>TITAN TALK s with AMOLED Dispaly</h4>
+                <div class="ratings">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <a href="cartu.html"><button class="btn btn-small addToCart" data-product-id="1">
+                        <i class="fas fa-cart-plus"></i>Add
+                        to cart
+                    </button></a>
+                <p>Rs.2075</p>
+            </div>
+            <div class="col-4">
+                <img src="https://staticimg.titan.co.in/Titan/Catalog/95146KD02_1.jpg?impolicy=pqmed&imwidth=640"
+                    width="280" height="280">
+                <h4>RAGA CERAMIC Green DIAL Watch</h4>
+                <div class="ratings">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <button class="btn btn-small addToCart" data-product-id="2">
+                    <i class="fas fa-cart-plus"></i>Add
+                    to cart
+                </button>
+                <p>Rs.1845</p>
+            </div>
+            <div class="col-4">
+                <img src="https://staticimg.titan.co.in/Titan/Catalog/90172AL01_1.jpg?impolicy=pqmed&imwidth=640"
+                    width="280" height="280">
+                <h4>TITAN EVOKE With 7000mh Battery</h4>
+                <div class="ratings">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <button class="btn btn-small addToCart" data-product-id="3">
+                    <i class="fas fa-cart-plus"></i>Add
+                    to cart
+                </button>
+                <p>Rs.5845</p>
+            </div>
+        </div>
+    </div>
+    <div class="small-container">
+        <h2 class="container">products</h2>
+        <div class="roww">
+            <div class="col-5">
+                <img src="https://img.etimg.com/photo/msid-98177092,imgsize-41762/boAtXtendSmartwatch.jpg" width="280"
+                    height="280">
+                <h4>TITAN TALK pro with AMOLED Dispaly 4.8inch</h4>
+                <div class="ratings">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <button class="btn btn-small addToCart" data-product-id="4">
+                    <i class="fas fa-cart-plus"></i>Add
+                    to cart
+                </button>
+                <p>Rs.2975</p>
+            </div>
+            <div class="col-5">
+                <img src="https://m.media-amazon.com/images/I/61lr5VDq88L.jpg" width="280" height="280">
+                <h4>UltraSmart 4800mh battery</h4>
+                <div class="ratings">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+                <button class="btn btn-small addToCart" data-product-id="5">
+                    <i class="fas fa-cart-plus"></i>Add
+                    to cart
+                </button>
+                <p>Rs.1801</p>
+            </div>
+            <div class="col-5">
+                <img src="https://cdn.shopify.com/s/files/1/0615/1631/6729/products/Noise-ColorFit-Qube-Smart-Watch.jpg?v=1668512332&width=360"
+                    width="280" height="280">
+                <h4>Noise COLORfit Pro</h4>
+                <div class="ratings">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <button class="btn btn-small addToCart" data-product-id="6">
+                    <i class="fas fa-cart-plus"></i>Add
+                    to cart
+                </button>
+                <p>Rs.845</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="footer">
+        <div class="container">
+            <div class="roww">
+                <div class="footer-col-1">
+                    <h3>Visit Our Store</h3>
+
+                    <div class="app-logo">
+                        <img src="https://images-platform.99static.com//DIsN-IIdnZmMRFUlXuKbmdFgqbY=/0x0:1761x1761/fit-in/500x500/99designs-contests-attachments/137/137773/attachment_137773120"
+                            width="100" height="100">
+
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img
+                        src="https://www.logo.wine/a/logo/App_Store_(iOS)/App_Store_(iOS)-Badge-Alternative-Logo.wine.svg">
+                    <p>Download App For Android And ios Mobile Phone</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links:</h3>
+                    <ul>
+                        <li>coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Instagram</li>
+                        <li>Twitter</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">CopyRight 2023-Shopping</p>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+	<style>
+		body {
+			background-color: #c4c9b5;
+			font-size: 18px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="row">
+
+		<nav class="navbar navbar-expand-lg " style="background: linear-gradient(0deg, #707d9a, 30%, #1176ac 70%);">
+			<div class="container-fluid">
+				<a class="navbar-brand ms-5 ps-3 text-warning" href="/">
+					<h4>Parking Management System</h4>
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+					aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarScroll">
+					<ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+						<li class="nav-item ">
+							<a class="nav-link active text-light ms-5 me-2 fs-6" href="admin/sample-data">CRUD PARK
+								AREA</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active text-light  me-2 fs-6" href="/admin/parking-area">PARKING AREA</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active text-light  me-2 fs-6" href="/admin/user-details">USER DETAILS</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active text-light  me-2 fs-6" href="#">FEEDBACKS</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active text-light  me-2 fs-6" href="/admin/contact-details">CONTACTS</a>
+							<!-- <a class="nav-link dropdown-toggle fs-6 text-warning" href="#" id="navbarScrollingDropdown"
+								role="button" data-bs-toggle="dropdown" aria-expanded="false">SERVICES</a>
+							<li class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+								<li><a class="dropdown-item  " href="/logout"><b>VIEW USERS</b></a></li>
+								<li><a class="dropdown-item " href="/"><b>VIEW PARKING AREA</b></a></li>
+							</li> -->
+
+						</li>
+
+
+
+						<!-- <li class="nav-item">
+							<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Link</a>
+						</li> -->
+					</ul>
+					<form class="d-flex">
+						<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+						<!-- <button class="btn btn-outline-success text-light" type="submit">Search</button> -->
+					</form>
+
+					<div class="dropdown">
+						<!-- <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar"
+						role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+						<img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25"
+							alt="Black and White Portrait of a Man" loading="lazy" />
+					</a> -->
+						<ul class="nav-item dropdown me-0 pt-3">
+							<a class="nav-link dropdown-toggle fs-6 text-warning" href="#" id="navbarScrollingDropdown"
+								role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								<button class="btn-sm text-danger bg-warning">
+									<%= fullName %>
+								</button>
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+								<li><a class="dropdown-item text-danger " href="/logout"><b>Logout</b></a></li>
+								<li><a class="dropdown-item text-success" href="/"><b>UserMode</b></a></li>
+								<!-- <li>
+								<hr class="dropdown-divider">
+							</li>
+							<li><a class="dropdown-item" href="#">Something else here</a></li> -->
+							</ul>
+						</ul>
+					</div>
+
+				</div>
+
+
+
+
+			</div>
+
+		</nav>
+	</div>
+	<!-- <div class="row">
+		<div class="col-12 justify-content-center">
+		<div class="container col-8">
+			<div class="card col-12 mt-5">
+				<div class="card-body">
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto necessitatibus iure fugit optio sequi magni debitis accusamus rem possimus voluptatum, voluptate ab? Dolor laborum expedita vitae praesentium officia veritatis consequatur.
+					ovident ea sit aspernatur. Quos, accusamus? Aliquam cupiditate aut tempora enim hic quaerat unde repellat, delectus perferendis eveniet exercitationem distinctio?
+					Nisi eos consectetur et, nulla perferendis molestias quaerat assumenda incidunt tenetur id eaque tempore earum veniam labore nobis harum voluptas deleniti officiis nam in! Facilis debitis beatae blanditiis laudantium consectetur?</p>
+				</div>
+			</div>
+			
+		</div>
+		</div>
+	</div> -->
+
+
+</body>
+
+</html>
