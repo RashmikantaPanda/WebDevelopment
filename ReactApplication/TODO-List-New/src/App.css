@@ -1,0 +1,190 @@
+body {
+  background-color: rgb(234, 237, 240);
+  color: #000000;
+  /* text-align: center; */
+
+}
+
+.App {
+  text-align: center;
+}
+
+.container {
+  /* background-color: rgb(245, 238, 238);  */
+  background-color: rgb(255, 255, 255);
+
+  /* margin-top: 10px; */
+  border: 1px solid rgb(224, 221, 221);
+  height: auto;
+}
+
+.taskBg {
+  /* background-color: rgb(245, 238, 238); */
+  /* background-color: rgb(234, 237, 240); */
+
+  border: 3px solid #e1e1e1;
+  border-radius: 6px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 10px 140px 10px 15px;
+  text-align: left;
+  font-size: 22px;
+  position: relative;
+}
+
+.taskBg div {
+  display: flex;
+  align-items: center;
+}
+
+.taskBg .taskText {
+  flex: 1;
+}
+
+.taskBg .done .taskText {
+  text-decoration: line-through;
+  opacity: 0.5;
+  color: rgb(255, 0, 0);
+}
+
+.taskNumber {
+  color: #070707;
+  border: 1px solid #240101;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  text-align: center;
+  font-size: 14px;
+  margin-right: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.taskBg .iconsWrap {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15px;
+  width: auto;
+  display: inline-block;
+}
+
+.taskBg .iconsWrap span {
+  display: inline-block;
+  margin: 0px 10px 0 10px;
+  cursor: pointer;
+  color: #c53620;
+  ;
+}
+
+.taskBg .iconsWrap span:hover {
+  color: rgb(255, 209, 4);
+}
+
+
+.inputTodo {
+  /* display: block; */
+  border: 3px solid #eaeaea;
+  padding-inline-end: 15px;
+  padding-left: 15px;
+}
+
+.inputTodo input {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid rgb(70, 70, 70);
+  font-size: 26px;
+
+}
+
+.inputTodo button {
+  margin-bottom: 5px;
+  /* background-color: #4bcdd6; */
+
+}
+
+.inputTodo .updateButtons {
+  margin-bottom: 5px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.deleteAllBtn {
+  /* margin-top: 10px; */
+  margin-bottom: 40px;
+}
+
+
+.btn:focus {
+  outline: none;
+}
+
+.custom-input {
+  border: 2px solid ;
+  /* border-color: rgba(188, 15, 15, 0.8); */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .App {
+  text-align: center;
+  background-color: rgb(253, 253, 253);
+  font-size:32px;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
