@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+    /* background-image: url("./Images/resturantTable1.jpg"); */
+    background-size:cover;
+    background-repeat: no-repeat;
+    height: 100%;    
+    font-family: 'Numans', sans-serif;
+    }
+
+.bg-pink{
+    background: linear-gradient(0deg, #cc2ea4, #ff07c1);
+}
+.bg-green{
+    background:#17734d;
+}
+
+.bg-darkkhaki{
+    background-color: darkkhaki;
+}
+
+.tableImage{
+    /* background-image: url("./Images/resturantTable1.jpg"); */
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    height: 80vh;
+}
+
+.tableImage a {
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.tableImage a:hover {
+    transform: scale(1.3);
+    background-color: #FF0000; 
+    color: #2aeb10;
+}
+.logoutBtn :hover{
+    transform: scale(1.3);
+    background-color: #FF0000;
+    color: #2aeb10;
+}
+
+.customerBookingTable{
+    background-color: aliceblue;
+}
+
