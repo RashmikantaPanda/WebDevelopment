@@ -1,0 +1,26 @@
+{
+  "user": {
+    "firstName": "Rashmikanta",
+    "lastName": "Panda",
+    "email": "rk.panda@gmail.com",
+    "password": "RK@123",
+    "mobile": "9437539215",
+    "address": {
+      "city": "KDP",
+      "state": "ODISHA",
+      "country": "INDIA",
+      "pincode": "754208"
+    },
+    "govtId": "202079671452"
+  },
+  "account": {
+    "accountNo": null,
+    "balance": 0,
+    "password": "",
+    "accountType": "savings",
+    "user": null,
+    "transactionHistories": null
+  }
+}
+
+
