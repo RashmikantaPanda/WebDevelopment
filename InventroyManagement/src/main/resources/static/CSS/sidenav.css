@@ -1,0 +1,53 @@
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    overflow-y: scroll;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    background-color: #ccb7a5;
+    padding-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Add a black background color to the sidebar's links */
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #343a40;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* On mouse-over */
+.sidebar a:hover {
+    background-color: #dee2e6;
+}
+
+/* Main content */
+.content {
+    margin-left: 250px;
+}
+
+.navigation-bar {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+}
+
+.jumbotron {
+    /*background-color: #343a40;*/
+    background-color: #ab8e28;
+    color: #fff;
+}
+
+.product-details {
+    display: flow-root;
+}
+
+.pruduct-sell-history {
+    margin-left: 200px;
+}
