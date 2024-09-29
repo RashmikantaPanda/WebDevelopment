@@ -26,7 +26,7 @@
 
 <div class="content mt-2">
     <div>
-        <%@include file="./pages/admin/adminAddNewCategory.jsp"%>
+        <%@include file="./pages/admin/adminAddNewItem.jsp"%>
     </div>
 </div>
 </body>

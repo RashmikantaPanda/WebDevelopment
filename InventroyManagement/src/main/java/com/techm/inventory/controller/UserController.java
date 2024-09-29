@@ -8,15 +8,15 @@ import com.techm.inventory.model.User;
 import com.techm.inventory.service.ProductService;
 import com.techm.inventory.service.PurchaseHistoryService;
 import com.techm.inventory.service.UserService;
-import com.techm.inventory.utill.SellPdfGenerator;
-import com.techm.inventory.utill.SortByProductName;
-import com.techm.inventory.utill.SortByProductPrice;
+import com.techm.inventory.utill.*;
 
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -244,6 +244,66 @@ public class UserController {
             return "redirect:/user/login";
         }
     }
+
+    @GetMapping("/export-to-excel")
+    public void exportIntoExcelFile(HttpServletResponse response) throws IOException {
+        response.setContentType("application/octet-stream");
+        DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
+        String currentDateTime = dateFormatter.format(new Date());
+
+        String headerKey = "Content-Disposition";
+        String headerValue = "attachment; filename=product" + currentDateTime + ".xlsx";
+        response.setHeader(headerKey, headerValue);
+
+        List <Product> listOfStudents = productService.getAllActiveProduct();
+        ExcelGenerator generator = new ExcelGenerator(listOfStudents);
+        generator.generateExcelFile(response);
+    }
+
+    @GetMapping("/export-to-csv-using-csv-writer")
+    public void generateCsvFile(HttpServletResponse response) throws IOException {
+        response.setContentType("application/octet-stream");
+        DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
+        String currentDateTime = dateFormatter.format(new Date());
+
+        String headerKey = "Content-Disposition";
+        String headerValue = "attachment; filename=product" + currentDateTime + ".csv";
+        response.setCharacterEncoding("UTF-8");
+        response.setHeader(headerKey, headerValue);
+
+        List<Product> productList = productService.getAllActiveProduct();
+        CsvGeneratorUtil csvGeneratorUtil=new CsvGeneratorUtil();
+
+        response.getOutputStream().write(0xEF);
+        response.getOutputStream().write(0xBB);
+        response.getOutputStream().write(0xBF);
+
+        byte[] csvBytes = csvGeneratorUtil.generateCsv(productList).getBytes(StandardCharsets.UTF_8);
+        response.getOutputStream().write(csvBytes);
+        response.getOutputStream().flush();
+    }
+    public void generateCsvFileUsingCsvWriter(HttpServletResponse response) throws IOException {
+        response.setContentType("application/octet-stream");
+        DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
+        String currentDateTime = dateFormatter.format(new Date());
+
+        String headerKey = "Content-Disposition";
+        String headerValue = "attachment; filename=product" + currentDateTime + ".csv";
+        response.setCharacterEncoding("UTF-8");
+        response.setHeader(headerKey, headerValue);
+
+        List<Product> productList = productService.getAllActiveProduct();
+        CsvGeneratorUtil csvGeneratorUtil=new CsvGeneratorUtil();
+
+        response.getOutputStream().write(0xEF);
+        response.getOutputStream().write(0xBB);
+        response.getOutputStream().write(0xBF);
+
+        try (OutputStreamWriter writer = new OutputStreamWriter(response.getOutputStream(), StandardCharsets.UTF_8)) {
+            csvGeneratorUtil.generateCsvUsingCsvWriter(writer, productList);
+        }
+    }
+
 
     @GetMapping("**")
     public String unknownPage(HttpSession session) {
